@@ -1,0 +1,101 @@
+
+@api = http://localhost:8080/api/orders
+
+GET {{api}}
+
+######## Get by name
+GET {{api}}/toyota
+
+######## Get by buysale
+GET {{api}}/buysale/buy
+
+######## 
+POST {{api}}/addorder HTTP/1.1
+Content-Type: application/json 
+
+{
+    "no": 3,
+    "name":"xo",
+    "type":"drink",
+    "buysale":"buy",
+    "price":500,
+    "quantity":10,
+    "total":5000
+}
+
+########
+DELETE {{api}}/deleteorder/kei HTTP/1.1
+Content-Type: application/json 
+
+############### Login Test #######################
+
+@apilogin = http://localhost:8080/api/login
+GET {{apilogin}}
+
+########
+GET {{apilogin}}/Fish
+
+
+########
+POST {{apilogin}}/addlogin HTTP/1.1
+Content-Type: application/json 
+
+{
+    "username":"Doggy",
+    "password":"Dog"
+}
+
+########
+PUT {{apilogin}}/update  HTTP/1.1
+Content-Type: application/json 
+
+{
+    "username":"B",
+    "password":"B",
+    "img":"http://localhost:8080/images/Tiger1.jpg"
+}
+
+##########
+DELETE  {{apilogin}}/delete/H  HTTP/1.1
+Content-Type: application/json 
+
+############ ProductList DB UpdateLists ############
+@apiUpdate = http://localhost:8080/api/productlists
+GET {{apiUpdate}}
+
+############ Follow by 'id' of updateProduct #######
+PUT {{apiUpdate}}/update  HTTP/1.1
+Content-Type: application/json 
+
+{
+    "id": 1,
+    "type":"car",
+    "pname":"Hundai",
+    "price": 980,
+    "volume": 50000,
+    "days": "2022-02-04 01:00:00.000",
+    "detail":"", 
+    "pimg":""
+}
+
+##################
+
+POST {{apiUpdate}}/addproductlist HTTP/1.1
+Content-Type: application/json 
+
+{
+    "id": 11,
+    "type":"food",
+    "pname":"beef",
+    "price": 150,
+    "volume": 700000,
+    "days":"2022-02-04 01:00:00.000",
+    "detail":"",
+    "pimg":""
+}
+
+#######################
+DELETE  {{apiUpdate}}/deleteproductlist/black label  HTTP/1.1
+Content-Type: application/json 
+#######################
+GET {{apiUpdate}}/toyota
