@@ -41,3 +41,5 @@ ng new projectname --skip-git -->
 nest g module login
 nest g service login
 nest g controller login -->
+
+<!-- // "test": "echo \"Error: no test specified\" && exit 1", -->
